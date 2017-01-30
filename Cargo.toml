@@ -1,0 +1,7 @@
+[package]
+name = "status_codes"
+version = "0.1.0"
+authors = ["rene paulokat <rene@so36.net>"]
+
+[dependencies]
+nickel = "*"
