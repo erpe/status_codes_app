@@ -22,7 +22,7 @@ fn main() {
         }
     });
     server.utilize(StaticFilesHandler::new("assets/templates"));
-    server.listen(&*make_address());
+    server.listen(&*setup_address());
 }
 
 
@@ -30,12 +30,9 @@ fn extract_status_code(sc: u16) -> StatusCode  {
     return StatusCode::from_u16(sc)
 }
 
-fn get_server_port() -> u16 {
+fn setup_address() -> String {
     let port_str = env::var("PORT").unwrap_or(String::new());
-    port_str.parse().unwrap_or(8080)
-}
-
-fn make_address() -> String {
+    let parsed = port_str.parse().unwrap_or(8080);
     let address = "0.0.0.0:".to_string();
-    address + &get_server_port().to_string()
+    address + &parsed.to_string()
 }
