@@ -22,7 +22,7 @@ fn main() {
         }
     });
     server.utilize(StaticFilesHandler::new("assets/templates"));
-    server.listen("0.0.0.0:443");
+    server.listen("0.0.0.0:8080");
 }
 
 
