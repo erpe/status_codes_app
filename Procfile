@@ -1,2 +1,2 @@
-web: ./target/release/statuscode
+web: ./target/release/status_codes
 
